@@ -37,7 +37,7 @@ export function evenNumbersWithin(destination) {
     const arrayOfEvenNumbers = []
 
     // write your code here
-    for (let i = 1; i <= destination; i++) {
+    for (let i = 0; i <= destination; i++) {
         if (i % 2 === 0) {
             arrayOfEvenNumbers.push(i)
             count++
