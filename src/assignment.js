@@ -31,18 +31,17 @@ export function sumOfNumbersTo(destination) {
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
 export function evenNumbersWithin(destination) {
-    console.log(destination)
     // get the number from 0 to destination
     let sum = 0
     let count = 0
     const arrayOfEvenNumbers = []
 
     // write your code here
-    for (let num = 0; num <= destination; num++) {
-        if (num % 2 === 0) {
-            arrayOfEvenNumbers.push(num)
+    for (let i = 0; i <= destination; i++) {
+        if (i % 2 === 0) {
+            arrayOfEvenNumbers.push(i)
             count++
-            sum += num
+            sum += i
         }
     }
     return {
@@ -86,14 +85,13 @@ export function celsiusToFahrenheit(arrayOfNumbers) {
  * @returns {object} the count, sum, and arrayOfOddNumbers
  */
 export function oddNumbersWithin(destination) {
-    console.log(destination)
     // get the number from 0 to destination
     let sum = 0
     let count = 0
     const arrayOfOddNumbers = []
 
     // write your code here
-    for (let num = 0; num < destination; num++) {
+    for (let num = 0; num <= destination; num++) {
         if (num % 2 !== 0) {
             arrayOfOddNumbers.push(num)
             count++
@@ -185,23 +183,25 @@ export function calculateFactorials(arrayOfNumbers) {
  * @returns {object} the count, sum, and arrayOfPrimes
  */
 export function findPrimeNumbers(arrayOfNumbers) {
-    console.log(arrayOfNumbers)
     let sum = 0
     let count = 0
     const arrayOfPrimes = []
 
     // write your code here
-    for (let i = 2; i < arrayOfNumbers.length; i++) {
-        let isPrime = true
-        for (let j = 2; j < i; j++) {
-            if (i % j === 0) {
-                isPrime = false
+    for (const num of arrayOfNumbers) {
+        if (num <= 1) {
+            continue
+        }
+        let isNumPrime = true
+        for (let i = 2; i * i <= num; i++) {
+            if (num % i === 0) {
+                isNumPrime = false
                 break
             }
         }
-        if (isPrime) {
-            arrayOfPrimes.push(i)
-            sum += i
+        if (isNumPrime) {
+            arrayOfPrimes.push(num)
+            sum += num
             count++
         }
     }
