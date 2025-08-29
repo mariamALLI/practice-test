@@ -40,8 +40,8 @@ export function evenNumbersWithin(destination) {
     for (let i = 0; i <= destination; i++) {
         if (i % 2 === 0) {
             arrayOfEvenNumbers.push(i)
-            count++
             sum += i
+            count++
         }
     }
     return {
